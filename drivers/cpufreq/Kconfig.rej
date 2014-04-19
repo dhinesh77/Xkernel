@@ -1,0 +1,49 @@
+--- drivers/cpufreq/Kconfig
++++ drivers/cpufreq/Kconfig
+@@ -127,6 +127,12 @@
+ 	help
+ 	  Use the CPUFreq governor 'smartass' as default.
+ 
++config CPU_FREQ_DEFAULT_GOV_SCARY
++	bool "scary"
++	select CPU_FREQ_GOV_SCARY
++	help
++		Use the CPUFreq governor 'scary' as default.
++
+ config CPU_FREQ_DEFAULT_GOV_SMARTASS2
+ 	bool "smartass2"
+ 	select CPU_FREQ_GOV_SMARTASS2
+@@ -265,6 +277,14 @@
+ 
+ 	  If in doubt, say N.
+ 
++config CPU_FREQ_GOV_SCARY
++	tristate "'scary' cpufreq governor"
++	depends on CPU_FREQ
++	help
++		scary - a governor for cabbages
++
++		If in doubt, say N.
++
+ config CPU_FREQ_GOV_SMARTASS2
+ 	tristate "'smartassV2' cpufreq governor"
+ 	depends on CPU_FREQ
+@@ -273,6 +293,18 @@
+ 
+ 	  If in doubt, say N.
+ 
++config CPU_FREQ_GOV_INTERACTIVEX
++	tristate "'interactiveX' cpufreq policy governor"
++	help
++	  'interactiveX' - Modified version of interactive with sleep+wake code.
++
++config CPU_FREQ_GOV_SAVAGEDZEN
++	tristate "'savagedzen' cpufreq governor"
++	depends on CPU_FREQ
++	help
++	   'Savaged-Zen' - a "smartass" based governor
++	   If in doubt, say N.
++
+ config CPU_FREQ_MIN_TICKS
+ 	int "Ticks between governor polling interval."
+ 	default 10
