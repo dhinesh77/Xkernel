@@ -1,0 +1,4 @@
+kernel/drivers/power/power_supply.ko
+kernel/drivers/power/bcmpmu-em.ko
+kernel/drivers/power/spa_power.ko
+kernel/drivers/power/spa_ps.ko
